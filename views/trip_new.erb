@@ -1,61 +1,66 @@
+<h2>Welcome to the MBTA!</h2>
+<h3>Please enter your start station and destination:</h3>
+
 <form action="/trip/create" method="post">
 <!-- start station drop down -->
-<select name="start_station">
+Start Station:
+<select name="home">
 
 <!-- red line -->
-<option value="south_station">Red- South Station</option>
-<option value="park_st">Red- Park St</option>
-<option value="kendall">Red- Kendall</option>
-<option value="central">Red- Central</option>
-<option value="harvard">Red- Harvard</option>
-<option value="porter">Red- Porter</option>
-<option value="davis">Red- Davis</option>
-<option value="alewife">Red- Alewife</option>
+<option value="red-south_station">Red- South Station</option>
+<option value="red-park_st">Red- Park St</option>
+<option value="red-kendall">Red- Kendall</option>
+<option value="red-central">Red- Central</option>
+<option value="red-harvard">Red- Harvard</option>
+<option value="red-porter">Red- Porter</option>
+<option value="red-davis">Red- Davis</option>
+<option value="red-alewife">Red- Alewife</option>
 <!-- green line -->
-<option value="haymarket_green">Green- Haymarket</option>
-<option value="government_center">Green- Gov't Center</option>
-<option value="park_st">Green- Park St</option>
-<option value="boylston">Green- Boylston</option>
-<option value="arlington">Green- Arlington</option>
-<option value="copley">Green- Copley</option>
+<option value="green-haymarket_green">Green- Haymarket</option>
+<option value="green-government_center">Green- Gov't Center</option>
+<option value="green-park_st">Green- Park St</option>
+<option value="green-boylston">Green- Boylston</option>
+<option value="green-arlington">Green- Arlington</option>
+<option value="green-copley">Green- Copley</option>
 <!-- orange line -->
-<option value="north_station">Orange- North Station</option>
-<option value="haymarket">Orange- Haymarket</option>
-<option value="park_st">Orange- Park St</option>
-<option value="state">Orange- State</option>
-<option value="downtown_crossing">Orange- Downtown Crossing</option>
-<option value="chinatown">Orange- Chinatown</option>
-<option value="back_bay">Orange- Back Bay </option>
-<option value="forest_hills">Orange- Forest Hills</option>
+<option value="orange-north_station">Orange- North Station</option>
+<option value="orange-haymarket">Orange- Haymarket</option>
+<option value="orange-park_st">Orange- Park St</option>
+<option value="orange-state">Orange- State</option>
+<option value="orange-downtown_crossing">Orange- Downtown Crossing</option>
+<option value="orange-chinatown">Orange- Chinatown</option>
+<option value="orange-back_bay">Orange- Back Bay </option>
+<option value="orange-forest_hills">Orange- Forest Hills</option>
 </select>
 
 <!-- end station drop down -->
-<select name="end_station">
+End Station:
+<select name="destination">
 <!-- red line -->
-<option value="south_station">Red- South Station</option>
-<option value="park_st">Red- Park St</option>
-<option value="kendall">Red- Kendall</option>
-<option value="central">Red- Central</option>
-<option value="harvard">Red- Harvard</option>
-<option value="porter">Red- Porter</option>
-<option value="davis">Red- Davis</option>
-<option value="alewife">Red- Alewife</option>
+<option value="red-south_station">Red- South Station</option>
+<option value="red-park_st">Red- Park St</option>
+<option value="red-kendall">Red- Kendall</option>
+<option value="red-central">Red- Central</option>
+<option value="red-harvard">Red- Harvard</option>
+<option value="red-porter">Red- Porter</option>
+<option value="red-davis">Red- Davis</option>
+<option value="red-alewife">Red- Alewife</option>
 <!-- green line -->
-<option value="haymarket_green">Green- Haymarket</option>
-<option value="government_center">Green- Gov't Center</option>
-<option value="park_st">Green- Park St</option>
-<option value="boylston">Green- Boylston</option>
-<option value="arlington">Green- Arlington</option>
-<option value="copley">Green- Copley</option>
+<option value="green-haymarket_green">Green- Haymarket</option>
+<option value="green-government_center">Green- Gov't Center</option>
+<option value="green-park_st">Green- Park St</option>
+<option value="green-boylston">Green- Boylston</option>
+<option value="green-arlington">Green- Arlington</option>
+<option value="green-copley">Green- Copley</option>
 <!-- orange line -->
-<option value="north_station">Orange- North Station</option>
-<option value="haymarket">Orange- Haymarket</option>
-<option value="park_st">Orange- Park St</option>
-<option value="state">Orange- State</option>
-<option value="downtown_crossing">Orange- Downtown Crossing</option>
-<option value="chinatown">Orange- Chinatown</option>
-<option value="back_bay">Orange- Back Bay </option>
-<option value="forest_hills">Orange- Forest Hills</option>
+<option value="orange-north_station">Orange- North Station</option>
+<option value="orange-haymarket">Orange- Haymarket</option>
+<option value="orange-park_st">Orange- Park St</option>
+<option value="orange-state">Orange- State</option>
+<option value="orange-downtown_crossing">Orange- Downtown Crossing</option>
+<option value="orange-chinatown">Orange- Chinatown</option>
+<option value="orange-back_bay">Orange- Back Bay </option>
+<option value="orange-forest_hills">Orange- Forest Hills</option>
 </select>
 <!-- submit button -->
 <input type='submit' value = 'Calculate Trip'></input>
