@@ -1,9 +1,12 @@
-# Sinatra Lab 1: Twitter & Stock
+# MBTA Trip Calculator, Take 2!
 
-Your boss has just told you that they want a simple way of keeping an eye on what's happening with a stock, both financially, and on Twitter. Your task is to make this happen. 
+The purpose of this application is to use Sinatra to rebuild our MBTA Trip Calculator for use on the web!
 
-## Instructions
+You should use a select dropdown form to determine the begining and end points for the trip. This should submit a `POST` to the server, which will then display the number of stops that the trip will take. 
 
-Use Sinatra, the Twitter gem, HTML/erb, CSS and a finance gem to create a page that allows you to put a stock symbol in the URL (like `http://localhost:4567/stocks/GOOG`) and then shows you a page of recent tweets, and some of the current relevent stock information (price, 52-week high/low, volume, etc) on a page. 
+Use a layout in Sinatra, and style appropriately with CSS. 
 
-You don't need to prompt the user for which stock. Just assume your boss knows the URL to go to. 
+### Things you'll have to figure out, and we haven't done together:
+
+- How to use 'select' and 'option' to create a dropdown in a form. 
+
