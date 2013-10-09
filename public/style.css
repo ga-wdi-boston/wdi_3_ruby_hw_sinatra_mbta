@@ -6,4 +6,17 @@ body {
 
 h1 {
 	font-size: 70px;
+	text-align: center;
+}
+
+form {
+	font-size: 18px;
+}
+
+select {
+	border: 0;
+}
+
+input {
+	border: 0;
 }
