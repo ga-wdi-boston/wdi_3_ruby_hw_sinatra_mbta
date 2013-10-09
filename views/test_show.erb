@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <title>THE T</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="./public/style.css">
 </head>
 <body>
   <h1>MBToday Trip Calculator</h1>
@@ -11,7 +12,7 @@
   <ul>
    <% Train_routes["red line"].each do |station| %>
     <li> <% if ((station == @start)||(station == @stop)) && ((@line1 == "red line")||(@line2 == "red line"))%>
-    <strong> <%= station %></strong>
+    <strong> <em><%= station %><em></strong>
             <% else %>
             <%= station %> </li>
             <%end%>
@@ -44,7 +45,13 @@
 
 <h2>The distance for your trip</h2>
 <h2>from <%=@line1%> <%=@start%> to <%=@line2%> <%=@stop%> </h2>
-<h2>is <%=@answer%> stops</h2>
+<h2>is <%=@answer%> stops...<% if @answer.to_i >3 %>
+     that's enough time for at least <%=@answer.to_i + 1%> beers!!
+    <% else %>
+    that's enough time for a quick beer!
+    <%end%>   
+</h2>
+
 
 </body>
 </html>

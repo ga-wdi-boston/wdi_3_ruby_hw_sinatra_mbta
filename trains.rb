@@ -4,13 +4,6 @@ require 'pry'
 set :server, 'webrick'
 
 
-# get '/users' do
-#   User.show_store
-# end
-
-# get '/user/show' do
-#   erb :train_show
-# end
 Train_routes = {"red line" => ["south st", "park st", "kendall", "central", "harvard", "porter", "davis", "alewife"], "green line" => ["haymarket green", "govt center", "park st", "boylston", "arlington", "copley"], "orange line" => ["north st", "haymarket orange", "park st", "state st", "downtown", "chinatown", "back bay", "forest hill"]}
 
 def one_track_trip(start_line, start_stop, end_line, end_stop)
@@ -43,7 +36,7 @@ end
 
 def count_trip(start_line, start_stop, end_line, end_stop)
   if start_stop == end_stop
-    "You should probably stop drinking on the train"
+    "...well you should probably stop drinking on the train.  You are already at the stop you wish to travel to!"
   else
     one_or_two_lines(start_line, start_stop, end_line, end_stop)
   end
