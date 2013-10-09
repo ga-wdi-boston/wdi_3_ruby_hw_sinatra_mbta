@@ -1,1 +1,1 @@
-<p>The total number of stops to your destination riding from <%= @origin.capitalize %> on the <%= @line_on.capitalize %> Line to <%= @destination.capitalize %> on the <%= @line_off.capitalize %> Line is <%= @total_stops %>.</p>
+<p>The total number of stops to your destination riding from <%= @start.split(' ').map(&:capitalize).join(' ') %> on the <%= @line_on.capitalize %> Line to <%= @stop.split(' ').map(&:capitalize).join(' ') %> on the <%= @line_off.capitalize %> Line is <%= @total_stops %>.</p>
