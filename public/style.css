@@ -1,16 +1,16 @@
 body {
-	font-family: sans-serif;
-	font-size: 50px;
+	font-family: Helvetica;
 	text-align: center;
+	font-size: 40px;
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	background: url('http://www.boston.com/yourtown/news/assets_c/2013/05/crowded%20Red%20Line%20May%202013-thumb-520x388-102648.jpg') no-repeat fixed;
+	background-size: cover;
 }
 
-h1 {
-	font-size: 70px;
-	text-align: center;
-}
-
-form {
+#form {
 	font-size: 18px;
+	border: 0;
 }
 
 select {
@@ -20,3 +20,4 @@ select {
 input {
 	border: 0;
 }
+
