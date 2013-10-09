@@ -1,8 +1,15 @@
 <h1>Welcome to the MBToday</h1>
 <h2>Please choose your location and destination</h2>
 <form action="create" method='post'>
+<!-- alternative shorter method -->
   <select name="origin_start">
-  <option value="red line-south st">Red-South St</option>
+  <% Train_routes.each do |line, array| %>
+  <% array.each do |station| %>
+  <% list_item = line + "-" + station %>
+  <option value=<%= list_item %>><%=list_item%></option>
+  <% end %>
+  <% end%>
+<!--   <option value="red line-south st">Red-South St</option>
   <option value="red line-park st">Red-Park St</option>
   <option value="red line-kendall">Red-Kendall</option>
   <option value="red line-central">Red-Central</option>
@@ -23,7 +30,7 @@
   <option value="orange line-downtown">Orange-Downtown</option>
   <option value="orange line-chinatown">Orange-Chinatown</option>
   <option value="orange line-back bay">Orange-Back Bay</option>
-  <option value="orange line-forest hill">Orange-Forest Hill</option>
+  <option value="orange line-forest hill">Orange-Forest Hill</option> -->
 
 </select>
 
