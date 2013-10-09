@@ -9,12 +9,12 @@ end
 post '/mbta/create' do
 	@start_input = params[:start_location]
 	@end_input = params[:end_location]
-	
+
 	@lines = {
 		red: ["south_station", "park_street", "kendall", "central", "harvard", "porter", "davis", "alewife"],
 		green: ["green_haymarket", "government_center", "park_street", "boylston", "arlington", "copley"],
 		orange: ["north_station", "orange_haymarket", "park_street", "state", "downtown_crossing", "chinatown", "back_bay", "forest_hills"]}
-		
+
 		@line_index_hash = {
 			1 => 'red',
 			2 => 'red',
@@ -92,6 +92,7 @@ post '/mbta/create' do
   	puts same_line_distance(@start_line, @start_station, @end_line, @end_station, @lines)
   else puts diff_line_distance(@start_line, @start_station, @end_line, @end_station, @lines)
   end
+
 
   erb :mbta
 end
