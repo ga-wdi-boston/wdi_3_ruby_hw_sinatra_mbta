@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>THE T</title>
+</head>
+<body>
+  <h1>MBToday Trip Calculator</h1>
+  <div class="routes">
+  <h2>Red Line</h2>
+  <ul>
+      <% Train_routes["red line"].each do |station| %>
+    <li> <%= station%> </li>
+        <%end%>
+  </div>
+
+ <div class="routes">
+  <h2>Green Line</h2>
+  <ul>
+    <% Train_routes["green line"].each do |station| %>
+    <li> <%= station %> </li>
+    <%end%>
+  </div>
+
+ <div class="routes">
+  <h2>Orange Line</h2>
+  <ul>
+    <% Train_routes["orange line"].each do |station| %>
+    <li> <%= station %> </li>
+    <%end%>
+  </div>
+
+<h2>The distance for your trip</h2>
+<h2>from <%=@line1%> <%=@start%> to <%=@line2%> <%=@stop%> </h2>
+<h2>is <%=@answer%> stops</h2>
+
+</body>
+</html>
