@@ -2,15 +2,13 @@ require 'pry'
 require 'sinatra'
 require 'sinatra/reloader' if development?
 
-get '/trip' do
-	erb :trip_new
-end
-
-get '/trip/show' do
-	erb :trip_show
-end
-
 get '/trip/new' do
+		@mbta = {
+		red: ["south_station", "park_st", "kendall", "central", "harvard", "porter", "davis", "alewife"],
+		green: ["haymarket_green", "government_center", "park_st", "boylston", "arlington", "copley"],
+		orange: ["north_station", "haymarket", "park_st", "state", "downtown_crossing", "chinatown", "back_bay", "forest_hills"]
+		}
+
 	erb :trip_new
 end
 
@@ -23,14 +21,15 @@ post '/trip/create' do
 	@destination = end_info[1]
 	@destination_line = end_info[0].to_sym
 
-	MBTA = {
+	@mbta = {
 		red: ["south_station", "park_st", "kendall", "central", "harvard", "porter", "davis", "alewife"],
 		green: ["haymarket_green", "government_center", "park_st", "boylston", "arlington", "copley"],
 		orange: ["north_station", "haymarket", "park_st", "state", "downtown_crossing", "chinatown", "back_bay", "forest_hills"]
 		}
 
 		def calc_index(line, stop)
-			return MBTA[line].index(stop).to_i
+			binding.pry
+			return @mbta[line].index(stop).to_i
 		end
 
 		def same_line(home_line, home, destination_line, destination)

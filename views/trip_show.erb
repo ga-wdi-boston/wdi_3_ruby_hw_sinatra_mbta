@@ -1,8 +1,8 @@
 <h2>Your Trip</h2>
-<p class="line"> Start Line: <%= @home_line %> </p>
-<p class="station"> Start Station: <%= @home %> </p>
+<p class="line"> Start Line: <%= @home_line.to_s.gsub('_', ' ').capitalize %> </p>
+<p class="station"> Start Station: <%= @home.gsub('_', ' ').capitalize %> </p>
 <br/>
-<p class="line"> End Line: <%= @destination_line %> </p>
-<p class="station"> End Station: <%= @destination %> </p>
+<p class="line"> End Line: <%= @destination_line.to_s.gsub('_', ' ').capitalize %> </p>
+<p class="station"> End Station: <%= @destination.gsub('_', ' ').capitalize %> </p>
 <br/>
 <p class="calc"> Stops: <%= @calc %> </p>
