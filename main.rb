@@ -8,5 +8,8 @@ get '/mbta/create' do
 end
 
 post '/mbta/new' do
+  @line_on, @start = params[:origin].split(',')
+  @line_off, @stop = params[:destination].split(',')
+  @total_stops = calculate_number_of_stops(@line_on, @start, @line_off, @stop)
   erb :mbta
 end

@@ -1,3 +1,5 @@
+require 'pry'
+
 RED_LINE =    ['south station', 'park st', 'kendall', 'central',
                'harvard', 'porter', 'davis', 'alewife']
 GREEN_LINE =  ['haymarket', 'government center', 'park st', 'boylston',
@@ -5,13 +7,14 @@ GREEN_LINE =  ['haymarket', 'government center', 'park st', 'boylston',
 ORANGE_LINE = ['north station', 'haymarket', 'park st', 'state',
                'downtown crossing', 'chinatown', 'back bay', 'forest hills']
 
-MBTA_SUBWAY_SYSTEM = { red: RED_LINE, green: GREEN_LINE, orange: ORANGE_LINE }
+@mbta_subway_system = { red: RED_LINE, green: GREEN_LINE, orange: ORANGE_LINE }
 
 def calculate_position_of_stop(line, stop)
-  MBTA_SUBWAY_SYSTEM[line.to_sym].index(stop)
+  @mbta_subway_system[line.to_sym].index(stop)
 end
 
 def calculate_distance_between_stops(line_on, start, line_off, stop)
+  binding.pry
   (calculate_position_of_stop(line_on, start) -
    calculate_position_of_stop(line_off, stop)).abs
 end

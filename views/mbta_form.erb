@@ -1,59 +1,67 @@
-<form action="/mbta/create" method='post'>
+<form action="/mbta/new" method='post'>
+  <span>Origin</span>
   <select name="origin">
-    Origin
+    <% @mbta_subway_system.each do |line, stations| %>
+      <% stations.each do |station| %>
+        <option value=<%= line.to_s + ', ' + station %>><% line + ', ' + station %></option>
+      <% end %>
+    <% end %>
+  </select>
     <!-- Red Line -->
-    <option value='red','south station'>Red Line — South Station</option>
-    <option value='red', 'park st'>Red Line — Park St</option>
-    <option value='red', 'kendall'>Red Line — Kendall</option>
-    <option value='red', 'central'>Red Line — Central</option>
-    <option value='red', 'harvard'>Red Line — Harvard</option>
-    <option value='red', 'porter'>Red Line — Porter</option>
-    <option value='red', 'davis'>Red Line — Davis</option>
-    <option value='red', 'alewife'>Red Line — Alewife</option>
+    <option value='red, south station'>Red Line — South Station</option>
+    <option value='red, park st'>Red Line — Park St</option>
+    <option value='red, kendall'>Red Line — Kendall</option>
+    <option value='red, central'>Red Line — Central</option>
+    <option value='red, harvard'>Red Line — Harvard</option>
+    <option value='red, porter'>Red Line — Porter</option>
+    <option value='red, davis'>Red Line — Davis</option>
+    <option value='red, alewife'>Red Line — Alewife</option>
     <!-- Green Line -->
-    <option value='green', 'haymarket'>Green Line — Haymarket</option>
-    <option value='green', 'government center'>Green Line — Government Center</option>
-    <option value='green', 'park st'>Green Line — Park St</option>
-    <option value='green', 'boylston'>Green Line — Boylston</option>
-    <option value='green', 'arlington'>Green Line — Arlington</option>
-    <option value='green', 'copley'>Green Line — Copley</option>
+    <option value='green, haymarket'>Green Line — Haymarket</option>
+    <option value='green, government center'>Green Line — Government Center</option>
+    <option value='green, park st'>Green Line — Park St</option>
+    <option value='green, boylston'>Green Line — Boylston</option>
+    <option value='green, arlington'>Green Line — Arlington</option>
+    <option value='green, copley'>Green Line — Copley</option>
     <!-- Orange Line -->
-    <option value='orange', 'north station'>Orange Line — North Station</option>
-    <option value='orange', 'haymarket'>Orange Line — Haymarket</option>
-    <option value='orange', 'park st'>Orange Line — Park St</option>
-    <option value='orange', 'state'>Orange Line — State</option>
-    <option value='orange', 'downtown crossing'>Orange Line — Downtown Crossing</option>
-    <option value='orange', 'chinatown'>Orange Line — Chinatown</option>
-    <option value='orange', 'back bay'>Orange Line — Back Bay</option>
-    <option value='orange', 'forest hills'>Orange Line — Forest Hills</option>
+    <option value='orange, north station'>Orange Line — North Station</option>
+    <option value='orange, haymarket'>Orange Line — Haymarket</option>
+    <option value='orange, park st'>Orange Line — Park St</option>
+    <option value='orange, state'>Orange Line — State</option>
+    <option value='orange, downtown crossing'>Orange Line — Downtown Crossing</option>
+    <option value='orange, chinatown'>Orange Line — Chinatown</option>
+    <option value='orange, back bay'>Orange Line — Back Bay</option>
+    <option value='orange, forest hills'>Orange Line — Forest Hills</option>
   </select>
 
+  <span>Destination</span>
   <select name="destination">
-    Destination
     <!-- Red Line -->
-    <option value='red','south station'>Red Line — South Station</option>
-    <option value='red', 'park st'>Red Line — Park St</option>
-    <option value='red', 'kendall'>Red Line — Kendall</option>
-    <option value='red', 'central'>Red Line — Central</option>
-    <option value='red', 'harvard'>Red Line — Harvard</option>
-    <option value='red', 'porter'>Red Line — Porter</option>
-    <option value='red', 'davis'>Red Line — Davis</option>
-    <option value='red', 'alewife'>Red Line — Alewife</option>
+    <option value='red, south station'>Red Line — South Station</option>
+    <option value='red, park st'>Red Line — Park St</option>
+    <option value='red, kendall'>Red Line — Kendall</option>
+    <option value='red, central'>Red Line — Central</option>
+    <option value='red, harvard'>Red Line — Harvard</option>
+    <option value='red, porter'>Red Line — Porter</option>
+    <option value='red, davis'>Red Line — Davis</option>
+    <option value='red, alewife'>Red Line — Alewife</option>
     <!-- Green Line -->
-    <option value='green', 'haymarket'>Green Line — Haymarket</option>
-    <option value='green', 'government center'>Green Line — Government Center</option>
-    <option value='green', 'park st'>Green Line — Park St</option>
-    <option value='green', 'boylston'>Green Line — Boylston</option>
-    <option value='green', 'arlington'>Green Line — Arlington</option>
-    <option value='green', 'copley'>Green Line — Copley</option>
+    <option value='green, haymarket'>Green Line — Haymarket</option>
+    <option value='green, government center'>Green Line — Government Center</option>
+    <option value='green, park st'>Green Line — Park St</option>
+    <option value='green, boylston'>Green Line — Boylston</option>
+    <option value='green, arlington'>Green Line — Arlington</option>
+    <option value='green, copley'>Green Line — Copley</option>
     <!-- Orange Line -->
-    <option value='orange', 'north station'>Orange Line — North Station</option>
-    <option value='orange', 'haymarket'>Orange Line — Haymarket</option>
-    <option value='orange', 'park st'>Orange Line — Park St</option>
-    <option value='orange', 'state'>Orange Line — State</option>
-    <option value='orange', 'downtown crossing'>Orange Line — Downtown Crossing</option>
-    <option value='orange', 'chinatown'>Orange Line — Chinatown</option>
-    <option value='orange', 'back bay'>Orange Line — Back Bay</option>
-    <option value='orange', 'forest hills'>Orange Line — Forest Hills</option>
-  </select>  
+    <option value='orange, north station'>Orange Line — North Station</option>
+    <option value='orange, haymarket'>Orange Line — Haymarket</option>
+    <option value='orange, park st'>Orange Line — Park St</option>
+    <option value='orange, state'>Orange Line — State</option>
+    <option value='orange, downtown crossing'>Orange Line — Downtown Crossing</option>
+    <option value='orange, chinatown'>Orange Line — Chinatown</option>
+    <option value='orange, back bay'>Orange Line — Back Bay</option>
+    <option value='orange, forest hills'>Orange Line — Forest Hills</option>
+  </select>
+
+  <input id='button' type='submit' value='Submit'>
 </form>
