@@ -31,8 +31,8 @@ get '/MBTA/new' do
 end
 
 post '/MBTA/create' do
-	start_stop, start_line = params[:Begin_trip].split('--')
-	end_stop, end_line = params[:End_trip].split('--')
+	start_stop, start_line = (params[:begin_trip]).split('--')
+	end_stop, end_line = (params[:end_trip]).split('--')
 	@distance = distance_trip(mbta, start_line, end_line, start_stop, end_stop)
 	erb :result
 end
