@@ -1,5 +1,3 @@
-require 'pry'
-
 RED_LINE =    ['south station', 'park st', 'kendall', 'central',
                'harvard', 'porter', 'davis', 'alewife']
 GREEN_LINE =  ['haymarket', 'government center', 'park st', 'boylston', 'arlington', 'copley']
