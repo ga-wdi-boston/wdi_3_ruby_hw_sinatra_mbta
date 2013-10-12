@@ -7,7 +7,7 @@
       <optgroup label=<%= line.to_s.capitalize %>>
         <% stations.each do |station| %>
         <option value=<%= "#{line.to_s}/#{station}" %>>
-            <%= station.split(' ').map(&:capitalize).join(' ') %>
+            <%= station.split('_').map(&:capitalize).join(' ') %>
         </option>
       <% end %>
       </optgroup>
@@ -20,7 +20,7 @@
       <optgroup label=<%= line.to_s.capitalize %>>
         <% stations.each do |station| %>
         <option value=<%= "#{line.to_s}/#{station}" %>>
-            <%= station.split(' ').map(&:capitalize).join(' ') %>
+            <%= station.split('_').map(&:capitalize).join(' ') %>
         </option>
       <% end %>
       </optgroup>
