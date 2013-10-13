@@ -47,11 +47,17 @@
   </div>
 
 <div class="end">
-<h2>Traveling from <%=@start%> to <%=@stop%> will take <%=@answer%> stops.</h2>
+<h2>Traveling from <%=@start%> to <%=@stop%> will take <%=@answer%> <%if (@start == "Select") || (@answer.to_i < 1)%>
+<a href="/trains/">Please Start Over</a>
+<%else%>
+stops.
+<%end%></h2>
 <% if @answer.to_i >3 %>
      That's enough time for at least <%=@answer.to_i + 1%> beers!!
-    <% else %>
+    <% elsif @answer.to_i >=1%>
     That's enough time for a quick beer!
+    <%else nil%>
+
     <%end%>   
 </h2>
 </div>

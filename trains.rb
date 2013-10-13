@@ -4,7 +4,7 @@ require 'pry'
 set :server, 'webrick'
 
 
-Train_routes = {"Red Line" => ["South St", "Park St", "Kendall", "Central", "Harvard", "Porter", "Davis", "Alewife"], "Green Line" => ["Haymarket", "Govt Center", "Park St", "Boylston", "Arlington", "Copley"], "Orange Line" => ["North St", "Haymarket", "Park St", "State St", "Downtown", "Chinatown", "Back Bay", "Forest Hill"]}
+Train_routes = {"Red Line" => ["Select","South St", "Park St", "Kendall", "Central", "Harvard", "Porter", "Davis", "Alewife"], "Green Line" => ["Haymarket", "Govt Center", "Park St", "Boylston", "Arlington", "Copley"], "Orange Line" => ["North St", "Haymarket", "Park St", "State St", "Downtown", "Chinatown", "Back Bay", "Forest Hill"]}
 
 def one_track_trip(start_line, start_stop, end_line, end_stop)
   newlist = []
@@ -37,6 +37,10 @@ end
 def count_trip(start_line, start_stop, end_line, end_stop)
   if start_stop == end_stop
     "...well you should probably stop drinking on the train.  You are already at the stop you wish to travel to!"
+  # elsif (start_stop == "Select") 
+  #   "...oh sorry, you did not select a starting location."
+  # elsif (end_stop == "Select")
+  #   "...oh sorry, you did not select a destination."
   else
     one_or_two_lines(start_line, start_stop, end_line, end_stop)
   end
@@ -47,7 +51,6 @@ get '/trains/' do
 end
 
 post '/trains/create/' do
-  binding.pry
   start_line, start_stop =(@params[:origin_start]).split("-") 
   end_line, end_stop = (@params[:origin_stop]).split("-")
   @start = start_stop
@@ -55,5 +58,9 @@ post '/trains/create/' do
   @stop = end_stop
   @line2 = end_line
   @answer = count_trip(start_line, start_stop, end_line, end_stop)
-  erb :test_show
+  if (start_stop == "Select") || (end_stop == "Select")
+ erb :new_error
+  else
+    erb :test_show
+  end
 end
