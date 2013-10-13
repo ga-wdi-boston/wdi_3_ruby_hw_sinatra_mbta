@@ -1,5 +1,6 @@
 
   <h1>MBToday Trip Calculator</h1>
+<div id="total-routes">
   <div class="routes">
   <h2><div id="red">Red Line</div></h2>
   <ul>
@@ -45,7 +46,7 @@
             <%end%>
         <%end%> 
   </div>
-
+</div>
 <div class="end">
 <h2>Traveling from <%=@start%> to <%=@stop%> will take <%=@answer%> <%if (@start == "Select") || (@answer.to_i < 1)%>
 <a href="/trains/">Please Start Over</a>
