@@ -4,7 +4,7 @@ require 'pry'
 set :server, 'webrick'
 
 
-Train_routes = {"red line" => ["south st", "park st", "kendall", "central", "harvard", "porter", "davis", "alewife"], "green line" => ["haymarket green", "govt center", "park st", "boylston", "arlington", "copley"], "orange line" => ["north st", "haymarket orange", "park st", "state st", "downtown", "chinatown", "back bay", "forest hill"]}
+Train_routes = {"Red Line" => ["South St", "Park St", "Kendall", "Central", "Harvard", "Porter", "Davis", "Alewife"], "Green Line" => ["Haymarket", "Govt Center", "Park St", "Boylston", "Arlington", "Copley"], "Orange Line" => ["North St", "Haymarket", "Park St", "State St", "Downtown", "Chinatown", "Back Bay", "Forest Hill"]}
 
 def one_track_trip(start_line, start_stop, end_line, end_stop)
   newlist = []
@@ -17,10 +17,10 @@ end
 def two_track_trip(start_line, start_stop, end_line, end_stop)
   first_track = Train_routes.fetch(start_line)
   second_track = Train_routes.fetch(end_line)
-  park = first_track.index("park st")
+  park = first_track.index("Park St")
   start = first_track.index(start_stop)
   first_dist = (park.to_i - start.to_i).abs
-  park2 = second_track.index("park st")
+  park2 = second_track.index("Park St")
   start2 = second_track.index(end_stop)
   second_dist = (park2.to_i - start2.to_i).abs
   first_dist + second_dist
@@ -42,11 +42,12 @@ def count_trip(start_line, start_stop, end_line, end_stop)
   end
 end
 
-get '/user/new' do
+get '/trains/' do
   erb :train_new
 end
 
-post '/user/create' do
+post '/trains/create/' do
+  binding.pry
   start_line, start_stop =(@params[:origin_start]).split("-") 
   end_line, end_stop = (@params[:origin_stop]).split("-")
   @start = start_stop

@@ -1,57 +1,57 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>THE T</title>
-  <link rel="stylesheet" type="text/css" href="./public/style.css">
-</head>
-<body>
+
   <h1>MBToday Trip Calculator</h1>
   <div class="routes">
-  <h2>Red Line</h2>
+  <h2><div id="red">Red Line</div></h2>
   <ul>
-   <% Train_routes["red line"].each do |station| %>
-    <li> <% if ((station == @start)||(station == @stop)) && ((@line1 == "red line")||(@line2 == "red line"))%>
-    <strong> <em><%= station %><em></strong>
-            <% else %>
-            <%= station %> </li>
-            <%end%>
-        <%end%> 
-  </div>
-
- <div class="routes">
-  <h2>Green Line</h2>
-  <ul>
-    <% Train_routes["green line"].each do |station| %>
-    <li> <% if ((station == @start)||(station == @stop)) && ((@line1 == "green line")||(@line2 == "green line")) %>
-    <strong> <%= station %></strong>
-            <% else %>
-            <%= station %> </li>
-            <%end%>
-        <%end%> 
-  </div>
-
- <div class="routes">
-  <h2>Orange Line</h2>
-  <ul>
-    <% Train_routes["orange line"].each do |station| %>
-    <li> <% if ((station == @start)||(station == @stop)) && ((@line1 == "orange line")||(@line2 == "orange line")) %>
-    <strong> <%= station %></strong>
-            <% else %>
-            <%= station %> </li>
-            <%end%>
-        <%end%> 
-  </div>
-
-<h2>The distance for your trip</h2>
-<h2>from <%=@line1%> <%=@start%> to <%=@line2%> <%=@stop%> </h2>
-<h2>is <%=@answer%> stops...<% if @answer.to_i >3 %>
-     that's enough time for at least <%=@answer.to_i + 1%> beers!!
+   <% Train_routes["Red Line"].each do |station| %>
+    <li> 
+    <% if ((station == @start) && (@line1 == "Red Line"))%>
+      <span class="first_stop" style="color: green;"><%= station %></span>
+    <% elsif ((station == @stop) && (@line2 == "Red Line"))%>
+      <span class="final_stop" style="color: red;"><%= station %></span>
     <% else %>
-    that's enough time for a quick beer!
+      <%= station %> 
+      </li>
+    <%end%>
+  <%end%> 
+  </div>
+
+ <div class="routes">
+  <h2 id="green">Green Line</h2>
+  <ul>
+    <% Train_routes["Green Line"].each do |station| %>
+    <li> 
+     <% if ((station == @start) && (@line1 == "Green Line"))%>
+      <span class="first_stop" style="color: green;"><%= station %></span>
+    <% elsif ((station == @stop) && (@line2 == "Green Line"))%>
+      <span class="final_stop" style="color: red;"><%= station %></span>
+            <% else %>
+            <%= station %> </li>
+            <%end%>
+        <%end%> 
+  </div>
+
+ <div class="routes">
+  <h2 id="orange">Orange Line</h2>
+  <ul>
+    <% Train_routes["Orange Line"].each do |station| %>
+    <li>     
+    <% if ((station == @start) && (@line1 == "Orange Line"))%>
+      <span class="first_stop" style="color: green;"><%= station %></span>
+    <% elsif ((station == @stop) && (@line2 == "Orange Line"))%>
+      <span class="final_stop" style="color: red;"><%= station %></span>
+            <% else %>
+            <%= station %> </li>
+            <%end%>
+        <%end%> 
+  </div>
+
+<div class="end">
+<h2>Traveling from <%=@start%> to <%=@stop%> will take <%=@answer%> stops.</h2>
+<% if @answer.to_i >3 %>
+     That's enough time for at least <%=@answer.to_i + 1%> beers!!
+    <% else %>
+    That's enough time for a quick beer!
     <%end%>   
 </h2>
-
-
-</body>
-</html>
+</div>
