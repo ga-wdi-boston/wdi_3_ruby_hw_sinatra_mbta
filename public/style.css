@@ -1,0 +1,25 @@
+body {
+  text-align: center;
+  font-family: Gill Sans;
+}
+h1 {
+  font-size: 40px;
+}
+img {
+  padding: 20px;
+}
+span {
+  font-size: 20px;
+}
+select {
+   font-size: 20px;
+   font-family: Gill Sans;
+}
+#the_answer_you_are_looking_for_is {
+  font-size: 20px;
+}
+#the_answer {
+  color: orange;
+  font-size: 80px;
+  margin-top: -15px;
+}

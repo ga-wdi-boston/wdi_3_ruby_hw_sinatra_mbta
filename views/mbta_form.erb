@@ -1,0 +1,31 @@
+<!--TODO: Create another partial to eliminate redundant code -->
+
+<form action="/mbta/new" method='post'>
+  <span>Origin</span>
+  <select name="origin">
+    <% MBTA_SUBWAY_SYSTEM.each do |line, stations| %>
+      <optgroup label=<%= line.to_s.capitalize %>>
+        <% stations.each do |station| %>
+        <option value=<%= "#{line.to_s}/#{station}" %>>
+            <%= station.split('_').map(&:capitalize).join(' ') %>
+        </option>
+      <% end %>
+      </optgroup>
+    <% end %> 
+  </select>
+
+  <span>Destination</span>
+   <select name="destination">
+    <% MBTA_SUBWAY_SYSTEM.each do |line, stations| %>
+      <optgroup label=<%= line.to_s.capitalize %>>
+        <% stations.each do |station| %>
+        <option value=<%= "#{line.to_s}/#{station}" %>>
+            <%= station.split('_').map(&:capitalize).join(' ') %>
+        </option>
+      <% end %>
+      </optgroup>
+    <% end %> 
+  </select>
+
+  <input id='button' type='submit' value='Submit'>
+</form>
