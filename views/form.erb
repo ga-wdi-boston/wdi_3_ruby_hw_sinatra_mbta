@@ -1,0 +1,32 @@
+<form action="create" method="post">
+
+
+Starting Station: 
+<select name="start">
+<% @red_stations.each do |station| %>
+	<option>Red Line: <%= station %></option>
+<% end %>
+<% @green_stations.each do |station| %>
+	<option>Green Line: <%= station %></option>
+<% end %>
+<% @orange_stations.each do |station| %>
+	<option>Orange Line: <%= station %></option>
+<% end %>
+</select>
+
+Ending Station: 
+<select name="end">
+<% @red_stations.each do |station| %>
+	<option>Red Line: <%= station %></option>
+<% end %>
+<% @green_stations.each do |station| %>
+	<option>Green Line: <%= station %></option>
+<% end %>
+<% @orange_stations.each do |station| %>
+	<option>Orange Line: <%= station %></option>
+<% end %>
+</select>
+
+
+<input type="submit" value = "Map My Trip"> </input>
+</form>
