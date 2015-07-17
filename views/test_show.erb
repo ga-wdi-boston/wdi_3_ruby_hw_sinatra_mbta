@@ -1,0 +1,64 @@
+
+  <h1>MBToday Trip Calculator</h1>
+<div id="total-routes">
+  <div class="routes">
+  <h2><div id="red">Red Line</div></h2>
+  <ul>
+   <% Train_routes["Red Line"].each do |station| %>
+    <li> 
+    <% if ((station == @start) && (@line1 == "Red Line"))%>
+      <span class="first_stop" style="color: green;"><%= station %></span>
+    <% elsif ((station == @stop) && (@line2 == "Red Line"))%>
+      <span class="final_stop" style="color: red;"><%= station %></span>
+    <% else %>
+      <%= station %> 
+      </li>
+    <%end%>
+  <%end%> 
+  </div>
+
+ <div class="routes">
+  <h2 id="green">Green Line</h2>
+  <ul>
+    <% Train_routes["Green Line"].each do |station| %>
+    <li> 
+     <% if ((station == @start) && (@line1 == "Green Line"))%>
+      <span class="first_stop" style="color: green;"><%= station %></span>
+    <% elsif ((station == @stop) && (@line2 == "Green Line"))%>
+      <span class="final_stop" style="color: red;"><%= station %></span>
+            <% else %>
+            <%= station %> </li>
+            <%end%>
+        <%end%> 
+  </div>
+
+ <div class="routes">
+  <h2 id="orange">Orange Line</h2>
+  <ul>
+    <% Train_routes["Orange Line"].each do |station| %>
+    <li>     
+    <% if ((station == @start) && (@line1 == "Orange Line"))%>
+      <span class="first_stop" style="color: green;"><%= station %></span>
+    <% elsif ((station == @stop) && (@line2 == "Orange Line"))%>
+      <span class="final_stop" style="color: red;"><%= station %></span>
+            <% else %>
+            <%= station %> </li>
+            <%end%>
+        <%end%> 
+  </div>
+</div>
+<div class="end">
+<h2>Traveling from <%=@start%> to <%=@stop%> will take <%=@answer%> <%if (@start == "Select") || (@answer.to_i < 1)%>
+<a href="/trains/">Please Start Over</a>
+<%else%>
+stops.
+<%end%></h2>
+<% if @answer.to_i >3 %>
+     That's enough time for at least <%=@answer.to_i + 1%> beers!!
+    <% elsif @answer.to_i >=1%>
+    That's enough time for a quick beer!
+    <%else nil%>
+
+    <%end%>   
+</h2>
+</div>
