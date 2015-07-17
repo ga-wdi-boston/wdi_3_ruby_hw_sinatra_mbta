@@ -1,0 +1,40 @@
+body {
+	font-family: 'News Cycle', sans-serif;
+	background: url(); 
+	text-align: center;
+}
+
+h1:hover {
+	color: red;
+}
+
+h2:hover {
+	color: grey;
+}
+
+.calc:hover {
+	color: red;
+}
+
+img {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	width: 200px;
+}
+
+.line:hover {
+	color: green;
+}
+
+.station:hover {
+	color: purple;
+}
+
+#span1:hover {
+	color: green;
+}
+
+#span2:hover {
+	color: purple;
+}

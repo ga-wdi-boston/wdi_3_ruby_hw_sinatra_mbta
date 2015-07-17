@@ -1,0 +1,32 @@
+<h2>Welcome to the MBTA!</h2>
+<h3>Please enter your <span id="span1">start station</span> and <span id="span2">destination</span></h3>
+
+<form action="/trip/create" method="post">
+<!-- start station drop down -->
+Start Station:
+<select name="home">
+<option>Please select a station</option>
+<% @mbta.each do |line, array|%>
+	<optgroup label=<%= line.to_s.capitalize %>>
+	<% array.each do |station| %>
+		<option value=<%= line.to_s + "-" + station %>><%= station.gsub('_', ' ').capitalize %></option>
+	<% end %>
+	</optgroup>
+<% end %>
+</select>
+
+<!-- end station drop down -->
+<select name="destination">
+<option>Please select a station</option>
+<% @mbta.each do |line, array|%>
+	<optgroup label=<%= line.to_s.capitalize %>>
+	<% array.each do |station| %>
+		<option value=<%= line.to_s + "-" + station %>><%= station.gsub('_', ' ').capitalize %></option>
+	<% end %>
+	</optgroup>
+<% end %>
+</select>
+<!-- submit button -->
+<input type='submit' value = 'Calculate Trip'></input>
+</form>
+

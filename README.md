@@ -9,3 +9,5 @@ Use a layout in Sinatra, and style appropriately with CSS.
 ### Things you'll have to figure out, and we haven't done together:
 
 - How to use 'select' and 'option' to create a dropdown in a form. 
+
+[![wdi](http://ga.bling.phillbaker.com/images/shield_imagined_ga_wdi.png)](https://generalassemb.ly/education/web-development-immersive)
